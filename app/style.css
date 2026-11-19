@@ -1,0 +1,239 @@
+/* Leonida at dusk: deep violet nights, neon pink, sunset orange, pale sand
+   type. One bold look — the neon — with everything else quiet and dense. */
+:root {
+  --bg: #150f2a;
+  --bg-raise: #1e1538;
+  --card: #221741;
+  --line: #3a2a63;
+  --ink: #f2e9d8;
+  --ink-dim: #b9aecb;
+  --pink: #ff2e88;
+  --orange: #ff7a1a;
+  --teal: #2dd4bf;
+  --gold: #f5c542;
+  --silver: #c0c8d4;
+  --bronze: #d08a4e;
+  --platinum: #7fe3f0;
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+html { color-scheme: dark; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.masthead {
+  padding: 40px 20px 28px;
+  background:
+    linear-gradient(100deg, rgba(255, 46, 136, 0.28), rgba(255, 122, 26, 0.16) 55%, transparent 80%),
+    var(--bg-raise);
+  border-bottom: 3px solid var(--pink);
+}
+
+.kicker {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  color: var(--ink-dim);
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: clamp(2.1rem, 6vw, 3.4rem);
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.lede { max-width: 62ch; margin: 0 0 20px; color: var(--ink-dim); }
+
+.progress p { margin: 0 0 6px; font-weight: 700; }
+.progress-track {
+  height: 12px;
+  max-width: 560px;
+  background: #0d0820;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--pink), var(--orange));
+  transition: width 0.25s ease;
+}
+
+main { max-width: 980px; margin: 0 auto; padding: 28px 20px 48px; }
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.roadmap-section { margin-bottom: 36px; }
+.roadmap-intro { color: var(--ink-dim); max-width: 68ch; }
+.roadmap-overall { font-weight: 700; }
+
+.stages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.stage {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+.stage h3 { margin: 0 0 8px; font-size: 1.1rem; }
+.stage-num {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--pink);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+.stage p { margin: 0 0 8px; }
+.stage-tip { color: var(--ink-dim); font-size: 0.92rem; }
+.stage-meta { font-weight: 700; color: var(--teal); }
+.stage-trophies { margin: 8px 0 0; padding-left: 18px; font-size: 0.92rem; }
+.stage-trophies li.done { color: var(--teal); text-decoration: line-through; }
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: end;
+  margin: 12px 0;
+}
+.controls label { display: flex; flex-direction: column; gap: 4px; font-size: 0.9rem; color: var(--ink-dim); }
+.controls label.spoiler { flex-direction: row; align-items: center; gap: 8px; color: var(--ink); }
+
+select, input[type="search"] {
+  background: #0d0820;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font: inherit;
+}
+input[type="search"] { min-width: 220px; }
+
+.io { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 12px 0; }
+.io p { margin: 0; color: var(--ink-dim); font-size: 0.92rem; }
+
+button {
+  background: var(--pink);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  padding: 9px 14px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+button:hover { background: #e81e78; }
+#reset-btn { background: transparent; color: var(--ink-dim); border: 1px solid var(--line); }
+#reset-btn:hover { color: var(--ink); border-color: var(--ink-dim); }
+.import { color: var(--ink-dim); font-size: 0.92rem; }
+.import input { font-size: 0.85rem; }
+
+#list-count { color: var(--ink-dim); font-size: 0.92rem; }
+
+.trophy {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin: 0 0 12px;
+}
+.trophy.earned { border-color: var(--teal); }
+.trophy.earned h3 { color: var(--teal); }
+
+.trophy-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.trophy-head input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--teal); flex: none; }
+.trophy-head h3 { margin: 0; flex: 1 1 200px; font-size: 1.08rem; }
+.guide-toggle {
+  background: transparent;
+  color: var(--pink);
+  border: 1px solid var(--pink);
+  padding: 5px 12px;
+  font-size: 0.9rem;
+}
+.guide-toggle:hover { background: var(--pink); color: #fff; }
+
+.grade {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+.grade-platinum { background: var(--platinum); color: #08222a; }
+.grade-gold { background: var(--gold); color: #33270a; }
+.grade-silver { background: var(--silver); color: #232a35; }
+.grade-bronze { background: var(--bronze); color: #2e1a08; }
+
+.trophy-desc { margin: 8px 0; color: var(--ink-dim); }
+.trophy-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; }
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: var(--ink-dim);
+}
+.tag-missable { border-color: var(--orange); color: var(--orange); font-weight: 700; }
+
+.trophy-guide {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.trophy-guide p { margin: 0 0 8px; }
+.sources-label { color: var(--ink-dim); font-size: 0.9rem; }
+.sources { margin: 0; padding-left: 18px; font-size: 0.9rem; }
+.sources a { color: var(--platinum); }
+
+.empty {
+  padding: 24px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  color: var(--ink-dim);
+}
+
+.sources-section { margin-top: 40px; border-top: 1px solid var(--line); padding-top: 20px; }
+.sources-section p { color: var(--ink-dim); max-width: 72ch; }
+#sources-list { line-height: 1.8; }
+#sources-list a { color: var(--platinum); }
+.fine { font-size: 0.88rem; }
+
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-fill { transition: none; }
+}
+
+@media (max-width: 640px) {
+  .masthead { padding: 28px 16px 20px; }
+  main { padding: 20px 16px 36px; }
+  input[type="search"] { min-width: 0; width: 100%; }
+}

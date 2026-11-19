@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GTA VI Trophy Guide — All 55 PS5 Trophies</title>
+<meta name="description" content="The offline guide and tracker for all 55 Grand Theft Auto VI trophies on PlayStation 5: official names, descriptions and grades, a checklist that saves in your browser, a roadmap to the platinum, missable flags and a spoiler setting.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23ff2e88'/%3E%3Ctext x='32' y='44' font-family='Arial,sans-serif' font-size='34' font-weight='900' text-anchor='middle' fill='%23ffffff'%3EVI%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <p class="kicker">Grand Theft Auto VI · PlayStation 5 · 55 trophies</p>
+  <h1>Leonida, checked off.</h1>
+  <p class="lede">Every trophy in GTA VI, with its official name, description and grade, a guide in our own words with its sources, and a checklist that remembers your progress. Works offline — nothing here phones home.</p>
+  <div class="progress" role="status" aria-live="polite">
+    <p id="progress-text">0 of 55 earned</p>
+    <div class="progress-track"><div id="progress-fill" class="progress-fill"></div></div>
+  </div>
+</header>
+
+<main>
+  <section class="roadmap-section" aria-labelledby="roadmap-heading">
+    <h2 id="roadmap-heading">Road to the platinum — Vice Got a Price!</h2>
+    <div id="roadmap"></div>
+  </section>
+
+  <section class="tracker" aria-labelledby="tracker-heading">
+    <h2 id="tracker-heading">The checklist</h2>
+    <div class="controls">
+      <label>Kind
+        <select id="kind-filter">
+          <option value="all">All trophies</option>
+          <option value="story">Story</option>
+          <option value="missable">Missable</option>
+          <option value="collectibles">Collectibles</option>
+          <option value="activities">Activities</option>
+          <option value="completion">Completion</option>
+          <option value="platinum">Platinum</option>
+          <option value="online">Online</option>
+        </select>
+      </label>
+      <label>Grade
+        <select id="grade-filter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label>Progress
+        <select id="earned-filter">
+          <option value="all">All</option>
+          <option value="earned">Earned</option>
+          <option value="not-earned">Not earned yet</option>
+        </select>
+      </label>
+      <label>Search
+        <input id="search" type="search" placeholder="Name, word, or kind…" autocomplete="off">
+      </label>
+      <label class="spoiler">
+        <input id="spoiler-toggle" type="checkbox" checked>
+        Hide story spoilers until earned
+      </label>
+    </div>
+    <div class="io">
+      <button id="export-btn" type="button">Export progress</button>
+      <label class="import">Import progress
+        <input id="import-file" type="file" accept="application/json,.json">
+      </label>
+      <button id="reset-btn" type="button">Clear progress</button>
+      <p id="import-status" role="status" aria-live="polite"></p>
+    </div>
+    <p id="list-count">Showing 55 of 55 trophies</p>
+    <div id="trophy-list"></div>
+  </section>
+
+  <section class="sources-section" aria-labelledby="sources-heading">
+    <h2 id="sources-heading">Sources</h2>
+    <p>Names, descriptions and grades are the official PlayStation list, as Exophase and PSNProfiles published it. Every guide is written for this page, in our own words, and cites where its facts come from. A guide the community has not yet confirmed says so — check the sources for the latest reports.</p>
+    <ul id="sources-list"></ul>
+    <p class="fine">An unofficial fan guide. Not affiliated with Rockstar Games or Sony Interactive Entertainment, and it uses no Rockstar logo, artwork or game screenshots. Your ticks are saved only in this browser (localStorage); export them to keep a copy.</p>
+  </section>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>

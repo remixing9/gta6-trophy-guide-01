@@ -1,0 +1,4 @@
+# Build output from `MAKEFUN_OUTPUT_DIR=out node main.ts` — regenerated, never committed.
+out/
+# Local tooling only.
+node_modules/
